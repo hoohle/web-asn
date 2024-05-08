@@ -2,6 +2,12 @@ name: .NET Core Desktop
 concurrency: live
 
 on:
+  workflow_dispatch: # 手动触发事件
+    inputs:
+      my_input: # 自定义输入参数
+        description: '自定义输入参数的描述'
+        required: true
+        default: '默认值'
   push:
     branches: [ "main" ]
     tags:
